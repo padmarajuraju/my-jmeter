@@ -1,11 +1,5 @@
 #!/bin/bash
 
-sudo bash
-sudo chmod 777 .
-cd ..
-
-sudo chmod 777 .
-su ubuntu
 
 sudo apt-get update -y 
 
