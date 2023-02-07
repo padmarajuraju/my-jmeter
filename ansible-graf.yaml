@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  vars:
+     helm_chart_url: "https://charts.bitnami.com/bitnami"
+  tasks:
+      - name: Add helm repo
+        kubernetes.core.helm_repository:
+          name: my-repo
+          repo_url: "{{ helm_chart_url }}"
+      - name: Deploy latest version of Grafana chart
+        kubernetes.core.helm:
+          name: my-release-grafana
+          chart_ref: my-repo/grafana
+          release_namespace: dev        
+          values:
+            replicas: 1 

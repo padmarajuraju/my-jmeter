@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  vars:
+     helm_chart_url: "https://charts.bitnami.com/bitnami"
+  tasks:
+      - name: Add helm repo
+        kubernetes.core.helm_repository:
+          name: my-repo
+          repo_url: "{{ helm_chart_url }}"
+      - name: Deploy latest version of influxdb chart
+        kubernetes.core.helm:
+          name: my-release-influxdb
+          chart_ref: my-repo/influxdb
+          release_namespace: dev        
+          values:
+            replicas: 1 

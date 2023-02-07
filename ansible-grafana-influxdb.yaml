@@ -1,0 +1,5 @@
+- name: Initialaize Grafana
+  import_playbook: ansible-graf.yaml
+- name: Initialaize Influxdb
+  import_playbook: ansible-inflx.yaml
+
