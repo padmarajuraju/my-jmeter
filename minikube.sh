@@ -5,8 +5,8 @@ sudo apt-get update -y
 sudo systemctl enable docker
 sudo systemctl start docker
 
-minikube config set cpus 5
-minikube config set memory 17999
+minikube config set cpus 6
+minikube config set memory 19999
 
 minikube start
 
