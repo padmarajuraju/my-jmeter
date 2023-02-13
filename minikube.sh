@@ -5,8 +5,8 @@ sudo apt-get update -y
 sudo systemctl enable docker
 sudo systemctl start docker
 
-minikube config set cpus 6
-minikube config set memory 19999
+minikube config set cpus 2
+minikube config set memory 3999
 
 minikube start
 
@@ -16,4 +16,3 @@ sudo curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.t
 
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-kubectl create namespace dev
